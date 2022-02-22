@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- CONFIGURACION MINIMA DE MOCHA: -->
+
+        <!-- incluir css para mocha, para mostrar los resultados -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+
+
+        <!-- incluir el código del framework mocha -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+
+        <script> 
+
+            mocha.setup('bdd'); // configuración mínima
+
+        </script>
+
+
+
+        <!-- incluir chai -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+
+        <script> // chai tiene extensiones, hacemos assert global
+
+            let assert = chai.assert;
+
+        </script>
+
+    </head>
+
+
+
+    <body>
+
+        <!-- ARCHIVOS QUE QUIERO PROBAR: -->
+
+        <script type="text/javascript" src="./javascripts/model-proxy.js"></script>
+        
+
+
+
+        <!-- ARCHIVO DONDE DEFINO LOS TESTS/PRUEBAS: -->
+
+        <script type="text/javascript" src="./javascripts/test-proxy.js"></script>        
+
+
+
+        <!-- CREAMOS UN ESPACIO DONDE MOCHA MOSTRARA LOS TESTS -->
+
+        <div id="mocha"></div>
+
+
+
+        <!-- EJECUTAMOS LOS TESTS -->
+
+        <script>
+
+            mocha.run();
+
+        </script>
+
+    </body>
+
+</html>

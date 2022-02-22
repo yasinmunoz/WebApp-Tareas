@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agregar tarea</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
+    <meta charset="UTF-8">
+
+    <script src="javascripts/model-proxy.js"></script>
+    <script src="./javascripts/agregar-tarea-presenter.js"></script>
+
+    <script>
+        let presenter;
+        function inicio() {
+            presenter = new AgregarTareaPresenter(new TareasAppProxy(), document);
+        }
+    </script>
+
+</head>
+
+<body onload="inicio()">
+    <main>
+        <header>
+            <a href="tareas.html"><img src="./images/logo.png" /></a>
+            <h1 id="header__web">Sitio Web de Tareas</h1>
+        </header>
+
+        <form class="form__agregar" method="GET" onsubmit="inicio()">
+            <h2>Agregar Tarea</h2>
+
+            <label for="titulo">Título</label><br>
+            <input id="titulo" name="titulo" type="text"><br> <br>
+
+            <label for="descripcion">Descripción<br></label>
+            <textarea id="descripcion" name="descripcion" type="text" value="descripcion"></textarea><br> <br>
+
+            <input type="submit" value="Guardar" onclick="presenter.guardarClick(event)">
+            <input type="reset" value="Limpiar">
+
+            <button id="button__agregartarea"> <a href="tareas.html">Listado</a> </button>
+        </form>
+
+        <footer>
+            <br> © 2021 Tareas WebApp - Laura Estop, Yasín Muñoz, Laura Rojas
+        </footer>
+    </main>
+
+</body>
+
+</html>

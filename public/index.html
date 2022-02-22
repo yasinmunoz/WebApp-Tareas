@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<script src="javascripts/model-proxy.js"></script>
+<script src="javascripts/presenter.js"></script>
+<script>
+
+    var presenter = new TareasAppPresenter(new TareasAppProxy(), document);
+
+</script>
+
+<body>
+    <h1>Login Tareas</h1>
+    <form>
+        <label>Usuario</label><br>
+        <input name="username" id="username" type="text" value="ricardo"><br>
+
+        <label>Password</label><br>
+        <input name="password" id="password" type="password" value="tesoriero"><br>
+        
+        <input type="submit" value="Login" onclick="presenter.login(event)">&nbsp;
+        <input type="submit" value="Signup" onclick="presenter.signup(event)">
+        <input type="submit" value="Logout" onclick="presenter.logout(event)">
+    </form>
+    <a href="http://localhost:3000/tareas.html">Ir a Tareas</a>
+    <hr>
+    <div id="status"> Status </div>
+</body>
+
+</html>

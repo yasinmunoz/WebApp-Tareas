@@ -1,0 +1,48 @@
+var mongoose = require('mongoose');
+
+var uri = 'mongodb://localhost/tareasapp';
+
+mongoose.Promise = global.Promise;
+
+// guardo la conexión
+var db = mongoose.connection;
+
+var Tarea = require('../model/tarea');
+
+// conjunto de eventos
+// cuando se conexta a la base de datos
+db.on('connecting', function () {
+    console.log('Connecting to ', uri);
+});
+
+db.on('connected', function () {
+    console.log('Connected to ', uri);
+});
+
+db.on('disconnecting', function () {
+    console.log('Disconnecting from ', uri);
+});
+
+db.on('disconnected', function () {
+    console.log('Disconnected from ', uri);
+});
+
+db.on('error', function (err) {
+    console.error('Error ', err.message);
+});
+
+async function start (){
+
+    try {
+        //aquí me conexto a la base de datos
+        // el connext devuelve una promesa. Cuando termine de conectarse ejecuta el then
+        await mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });            
+    } catch (error) {
+        console.error('Error', error.message)
+        await mongoose.disconnect();
+    }
+        
+}
+
+
+start();

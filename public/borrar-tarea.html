@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Borrar Tarea</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">    
+    <meta charset="UTF-8">
+
+    <script>
+        let params = new URLSearchParams(document.location.search);        
+        console.log (params.get('id'));
+    </script>
+
+    <script src="./javascripts/model-proxy.js"></script>
+    <script src="./javascripts/borrar-tarea-presenter.js"></script>
+
+    <script>
+        let presenter;
+        function inicio () {
+            presenter = new BorrarTareaPresenter (new TareasAppProxy(), document);
+            presenter.loaded();
+
+            //presenter.init();
+        }
+    </script>
+</head>
+
+<body onload="inicio()">
+    <main id="main">
+        <header>
+            <a href="tareas.html"><img src="./images/logo.png"/></a>           
+            <h1 id="header__web">Sitio Web de Tareas</h1>
+        </header>
+
+        <div class="div__tareas">
+            <h2 id="tareaId">Tarea N</h2>
+            <p id="tareaMensaje"> La Tarea N ha sido borrada</p>
+            <button id="button__vertarea"> <a href="tareas.html">Listado</a> </button>
+        </div>
+
+        <footer>
+            <br> © 2021 Tareas WebApp - Laura Estop, Yasín Muñoz, Laura Rojas
+        </footer>
+    </main>
+    
+</body>
+
+</html>

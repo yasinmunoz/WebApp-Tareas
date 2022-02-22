@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Modificar Tarea</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
+    <meta charset="UTF-8">
+
+    <script src="./javascripts/model-proxy.js"></script>
+    <script src="./javascripts/modificar-tarea-presenter.js"></script>
+
+    <script>
+        let presenter;
+        function inicio() {
+            presenter = new ModificarTareaPresenter(new TareasAppProxy(), document);            
+            presenter.refresh()
+        }
+    </script>
+
+</head>
+
+<body onload="inicio()">
+    <main>
+        <header>
+            <a href="tareas.html"><img src="./images/logo.png"/></a>
+            <h1 id="header__web">Sitio Web de Tareas</h1>
+        </header>
+
+        <form class="form__modificar" method="GET" action="ver-tarea.html">
+            <h2 id="tareaId">Modificar Tarea N</h2>
+
+            <label for="titulo">Título<br></label>
+            <input id="titulo" name="titulo" type="text" ><br><br>
+
+            <label for="descripcion">Descripción<br></label>
+            <textarea id="descripcion" name="descripcion" type="text" value="descripcion">Descripción</textarea><br><br>
+
+            <input type="submit" value="Guardar" onclick="presenter.editarClick(event)">
+            <input type="reset" value="Limpiar">
+
+            <button id="button__agregartarea"> <a href="tareas.html">Listado</a> </button>
+        </form>
+
+        <footer>
+            <br> © 2021 Tareas WebApp - Laura Estop, Yasín Muñoz, Laura Rojas
+        </footer>
+    </main>
+    
+</body>
+
+</html>

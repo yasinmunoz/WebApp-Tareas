@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ver Tarea</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
+    <meta charset="UTF-8">
+
+    <script>
+        let params = new URLSearchParams(document.location.search);
+        console.log(params.get('id'));
+    </script>
+
+    <script src="javascripts/model-proxy.js"></script>
+    <script src="./javascripts/ver-tarea-presenter.js"></script>
+
+    <script>
+
+        let presenter;
+        function inicio() {
+            presenter = new VerTareaPresenter(new TareasAppProxy(), document);
+            presenter.loaded();
+
+            //presenter.init();                
+        }
+    </script>
+
+</head>
+
+<body onload="inicio()">
+    <main id="main">
+        <header>
+            <a href="tareas.html"><img src="./images/logo.png" /></a>
+            <h1 id="header__web">Sitio Web de Tareas</h1>
+        </header>
+
+        <div class="div__tareas">
+            <h2 id="tareaId">Ver Tarea N</h2>
+
+            <h3>Título</h3>
+            <p id="titulo">Lorem ipsum</p>
+
+            <h3>Descripción</h3>
+            <p id="descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, alias rem corrupti
+                consectetur dolore
+                eligendi, unde esse incidunt labore perspiciatis aperiam suscipit. Incidunt sint, beatae debitis est
+                commodi odit sunt?</p>
+
+            <button id="button__vertarea"> <a href="tareas.html">Listado</a> </button>
+            <button id="button__vertarea" onclick="presenter.modificarClick(event)">Modificar</button>
+        </div>
+
+        <footer>
+            <br> © 2021 Tareas WebApp - Laura Estop, Yasín Muñoz, Laura Rojas
+        </footer>
+    </main>
+
+</body>
+
+</html>
