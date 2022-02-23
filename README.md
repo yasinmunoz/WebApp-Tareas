@@ -1,7 +1,7 @@
 # WebApp-Tareas
 Aplicación CRUD desarrollada en Node.js y Express con HTML, CSS y JavaScript.
 
-Prácticas de Tecnologías y Sistemas Web (4º curso esiiab) desarrolladas por Laura Rojas, Laura Estop y Yasín Muñoz.
+Prácticas de Tecnologías y Sistemas Web (4º curso esiiab) desarrolladas por Yasín Muñoz, Laura Rojas y Laura Estop
 ## Common setup
 
 Clone the repo 
