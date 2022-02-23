@@ -14,7 +14,6 @@ install the dependencies for the server.
 ```bash
 npm install
 ```
-``````
 ## Launching the app
 
 ```bash
