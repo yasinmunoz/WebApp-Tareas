@@ -16,8 +16,7 @@ npm install
 ```
 ``````
 ## Launching the app
-To start the express server....
 
 ```bash
-npm run dev
+npm run start
 ```
